@@ -3,3 +3,49 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+text-align: center;
+font-family: sans-serif;
+background-color: #F5F5F1;
+}
+
+h1 {
+  font-size: 1.1em;
+  padding: 2em 0;
+  font-weight: 500;
+}
+
+p {
+  margin: 0 auto;
+  max-width: 600px;
+  padding-bottom: 3em;
+  color: gray;
+  line-height: 2;
+}
+
+#grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding-bottom: 5em;
+}
+
+.card-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-name {
+  font-size: 1.3em;
+  padding-top: 20px;
+  color: gray;
+}
+
+.card-role {
+  padding-top: 0.5em;
+  padding-bottom: 20px;
+  color: gray;
+}

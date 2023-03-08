@@ -58,15 +58,49 @@ E ricordiamoci che console.log() è nostro amico!
 
 console.log(teamMembers);
 
+//prendo l'elemento grid dal documento
+let gridEl = document.getElementById("grid");
 
-let listEl = document.getElementById("list");
-
-//Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+//faccio un ciclo for..in che esegue le istruzioni per ogni proprietà degli oggetti contenuti nell'array teamMembers
 for (let key in teamMembers ) {
 
-  let newEl = document.createElement('li');
-  listEl.append(newEl);
-  
-  newEl.innerText = `${key}: Name: ${teamMembers[key].name}, Role: ${teamMembers[key].role}, Image: ${teamMembers[key].image}`;
+  // MILESTONE 1:
+  //Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+  console.log(`Name: ${teamMembers[key].name}, Role:${teamMembers[key].role}, Image: ${teamMembers[key].image}`)
+
+
+  //BONUS 2:
+  //Organizzare i singoli membri in card/schede
+
+  //creo un nuovo elemento div per la carta e lo appendo a grid
+  let newCardEl = document.createElement('div');
+  gridEl.append(newCardEl);
+  //aggiungo una classe css a questo elemento
+  newCardEl.classList.add("card-container");
+
+  //BONUS 1:
+  //Trasformare la stringa foto in una immagine effettiva
+
+  //creo un nuovo elemento img e lo appendo all'elemento creato precedentemente, cardEl
+  let newCardImgEl = document.createElement('img');
+  newCardEl.append(newCardImgEl);
+  //cambio la src dell'immagine con la proprietà image dell'array
+  newCardImgEl.src = `img/${teamMembers[key].image}`;
+
+  //creo un nuovo elemento div e lo appendo all'elemento cardEL
+  let newCardNameEl = document.createElement('div');
+  newCardEl.append(newCardNameEl);
+  //aggiungo una classe css a questo elemento
+  newCardNameEl.classList.add('card-name');
+  //cambio il testo di questo elemento con la proprietà name dell'array
+  newCardNameEl.innerText = `${teamMembers[key].name}`;
+
+  //creo un nuovo elemento div e lo appendo all'elemento cardEL
+  let newCardRoleEl = document.createElement('div');
+  newCardEl.append(newCardRoleEl);
+  //aggiungo una classe css a questo elemento
+  newCardRoleEl.classList.add('card-role');
+  //cambio il testo di questo elemento con la proprietà role dell'array
+  newCardRoleEl.innerText = `${teamMembers[key].role}`;
   
 };
