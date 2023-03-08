@@ -57,3 +57,13 @@ E ricordiamoci che console.log() è nostro amico!
   ];
 
 console.log(teamMembers);
+
+//Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+
+for (let i = 0; i < teamMembers.length; i++) {
+  
+  console.log("Name: " + teamMembers[i].name);
+  console.log("Role: " + teamMembers[i].role);
+  console.log("Image: " + teamMembers[i].image);
+
+};
