@@ -58,12 +58,15 @@ E ricordiamoci che console.log() è nostro amico!
 
 console.log(teamMembers);
 
+
+let listEl = document.getElementById("list");
+
 //Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+for (let key in teamMembers ) {
 
-for (let i = 0; i < teamMembers.length; i++) {
+  let newEl = document.createElement('li');
+  listEl.append(newEl);
   
-  console.log("Name: " + teamMembers[i].name);
-  console.log("Role: " + teamMembers[i].role);
-  console.log("Image: " + teamMembers[i].image);
-
+  newEl.innerText = `${key}: Name: ${teamMembers[key].name}, Role: ${teamMembers[key].role}, Image: ${teamMembers[key].image}`;
+  
 };
